@@ -7,11 +7,16 @@ public class PersonController {
         for(int i = 0; i < personas.length; i++){
             boolean swapped = false;
             for(int j = 0; j < personas.length - i -1; j++){
-                if(personas[j].getName().compareToIgnoreCase(personas[j+1].getName()) >0){
+                String a = personas[j].getName();
+                String b = personas[j+1].getName();
+                if(a == null) a = "";
+                if(b == null) b = "";
+                int cmp = a.compareToIgnoreCase(b);
+                if(cmp>0 || (cmp==0 && a.compareTo(b)>0)){
                     //Intercambio Correspondiente
-                    Person temp = personas[j];
+                    Person tmp = personas[j];
                     personas[j] = personas[j+1];
-                    personas[j+1] = temp;
+                    personas[j+1] = tmp;
                     swapped = true;                  
                 }
             }
