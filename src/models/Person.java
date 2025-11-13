@@ -4,9 +4,9 @@ public class Person {
     private String name;
     private int age;
 
-    public Person(String name, int age){
-        this.name = name;
+    public Person(String name, int age) {
         this.age = age;
+        this.name = name;
     }
 
     public String getName() {
@@ -27,7 +27,6 @@ public class Person {
 
     @Override
     public String toString(){
-        return "Nombre: " + name + "Edad: " + age;
+        return "[Nombre: " + name + " ]" + "[Edad: " + age + " ]";
     }
-
 }

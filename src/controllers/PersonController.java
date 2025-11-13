@@ -1,27 +1,22 @@
 package controllers;
-
 import models.Person;
 
 public class PersonController {
-
-    public void sortByName(Person[] personas) {
-        for (int i = 0; i < personas.length; i++) {
-            boolean swapped = false;
-            for (int j = 0; j < personas.length - 1 - i; j++) {
-                if (personas[j].getName().compareTo(personas[j+1].getName()) > 0) {
-                    // Intercambio Correspondiente
-                    Person temp = personas[j];
-                    personas[j] = personas[j + 1];
-                    personas[j + 1] = temp;
-                    swapped = true;
+    public void sortByName(Person[] people){
+        for(int i = 1; i < people.length ; i++){
+            Person key = people[i];
+            int j = i -1;
+                while(j>=0 && people[j].getName().compareToIgnoreCase(key.getName()) > 0){
+                    people[j+1] = people[j];
+                    j = j-1;
                 }
-            }
-            if (!swapped) {
-                //algo se hace
-                break;
-            }
-            
+            people[j+1] = key;
+        }
+    }
 
+    public void printArray(Person[] people){
+        for(int i = 0; i < people.length; i++){
+            System.out.println(people[i]);
         }
     }
 }

@@ -4,14 +4,14 @@ import models.Person;
 public class App {
     public static void main(String[] args) throws Exception {
         PersonController personContoller = new PersonController();
-        Person[] personas = makePersonList();
-        personContoller.sortByName(personas);
-        for(int i = 0; i < personas.length; i++){
-            System.out.println(personas[i]);
+        Person[] people = makePersonList();
+        personContoller.sortByName(people);
+        for(int i = 0; i < people.length; i++){
+            System.out.println(people[i]);
         }
-        personContoller.sortByName(personas);
-        for(int i = 0; i < personas.length; i++){
-            System.out.println(personas[i]);
+        personContoller.sortByName(people);
+        for(int i = 0; i < people.length; i++){
+            System.out.println(people[i]);
         }
     }
 
