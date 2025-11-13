@@ -5,14 +5,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         PersonController personContoller = new PersonController();
         Person[] people = makePersonList();
+        personContoller.printArray(people);
         personContoller.sortByName(people);
-        for(int i = 0; i < people.length; i++){
-            System.out.println(people[i]);
-        }
-        personContoller.sortByName(people);
-        for(int i = 0; i < people.length; i++){
-            System.out.println(people[i]);
-        }
+        personContoller.printArray(people);
     }
 
     public static Person[] makePersonList() {
